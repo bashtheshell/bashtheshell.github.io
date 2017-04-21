@@ -30,9 +30,9 @@ Variables I used:
 ```text
 Raspberry Pi's IP address:		10.0.1.25
 DHCP server gateway:			10.0.1.1
-subnet:							10.0.1.0/24
-domain name:					example.net
-hostname:						pxeboot
+subnet:					10.0.1.0/24
+domain name:				example.net
+hostname:				pxeboot
 ```
 
 For the above variables, you would need to make changes according to your environment. E.g. Your home router may have a DHCP pool for 192.168.0.0/24 network.
