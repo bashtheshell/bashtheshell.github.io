@@ -1,6 +1,6 @@
 ---
 layout:  
-title: "Setting up PXE boot server on Raspberry Pi"
+title: "Setting up PXE Boot Server on Raspberry Pi"
 excerpt:
 categories: posts
 tags: [apache2, automated install, CentOS 7, Debian 8, Debian Jessie, isc-dhcp-server, Jessie Lite, PXE boot server, raspberry pi, syslinux, tftpd-hpa]
