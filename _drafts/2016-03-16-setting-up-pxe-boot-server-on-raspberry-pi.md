@@ -109,11 +109,15 @@ We’re going to configure the HTTP server to export the installation tree from 
 
 1. Edit the `/etc/hosts` file. Append the following line:
 
+
    `10.0.1.25   pxeboot.example.net pxeboot`
+
 
 2. Install the http server and text-based web browser (to test the http server):
 
+
    `sudo apt-get install apache2 elinks`
+
 
 3. By default, http server should be running immediately after the install. You can confirm by running the command:
 
