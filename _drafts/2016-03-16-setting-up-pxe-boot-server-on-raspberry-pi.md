@@ -27,6 +27,7 @@ What I used:
 + Ethernet cable (for Raspberry Pi)
 
 Variables I used:
+
 ```text
 Raspberry Pi's IP address:		10.0.1.25
 DHCP server gateway:			10.0.1.1
@@ -45,63 +46,43 @@ Here in this prelude, I’ll elaborate on how I configured my Raspberry Pi from 
 
 1. Assuming you are using an existing home network, connect the Raspberry Pi to the available LAN port of the home router using Ethernet cable. Do not power on the Pi yet.
 
-
 2. Download *Raspian: Jessie Lite* image file to the computer with an SD memory card reader connected.
-
 
 3. Insert the SD memory card in the reader. Burn the Raspian image to the SD card. If you need further instruction on this, please refer to the documentation at [raspberrypi.org](https://www.raspberrypi.org/documentation/installation/installing-images/README.md).
 
-
 4. Remove the SD memory card from the reader and insert it in the Raspberry Pi. Power on the Raspberry Pi.
-
 
 5. Access the home router configuration page and view the list of connected devices on the router. You may find that it has a hostname, `raspberrypi`.
 
-
 6. Perform DHCP reservation for the IP address of your Raspberry Pi. It’s important that you take note of the IP address and MAC address as we’ll use the IP address several times in later steps. In my setup, the Raspberry Pi IP address is `10.0.1.25`. I suggested DHCP reservation here for the sake of convenience in case you have to reformat and start all over.
-
 
 7. Open up the SSH client. Use the Pi’s IP address to remote in. e.g. `pi@10.0.1.25`
 
-
 8. You should be logged in with the username _pi_ and password _raspberrypi_. Run the command: `sudo raspi-config`
-
 
 9. Select the 9th option, ‘Advanced Options’ to enter the advanced settings.
 
-
 10. After entering the ‘Advanced Options’, scroll down to select the ‘A0 Update’ setting as this should be the first thing before doing the rest of the steps. This will update the 'raspi-config' tool to the latest version.
-
 
 11. Now you should be back on the configuration screen. Select the first option ‘Expand Filesystem’ to use the remaining space on SD card.
 
-
 12. Select the 2nd option, 'Change User Password' to set a new password for user, _Pi_.
-
 
 13. Change the 5th option, 'Internationalisation Options' to change the language and locale settings.
 
-
 14. Select 'I1 Change Locale' to change the locale setting. ‘en_GB.UTF-8 UTF-8' is used by default. Please deselect the locale by pressing SPACE. The asterisk should disappear. If you are from the States, you’d want to use the ‘en_US.UTF-8 UTF-8’ setting. Press SPACE to select it then press ENTER to generate the new locale. Next, you will set the default locale: For ‘Default locale for the system environment:', select ‘en_US.UTF-8’ then press ENTER.
-
 
 15. Go back to the ‘Internationalisation Options’ to select the ‘I2’ option. Since I’m from the eastern part of the U.S., I selected the ‘US’ geographic area and ‘Eastern’ time zone. We’re not going to revisit the ‘Internationalisation Options’ to select the last option, ‘I3 Change Keyboard Layout’ since we are using SSH to remote in headless mode.
 
-
 16. Back at the 'raspi-config' screen, enter ‘Advanced Options’ so that we can modify a few things there. First, select the ‘A2 Hostname’ sub-option to change the hostname. By default the hostname is `raspberrypi`. I changed mine to `pxeboot`. Please do not use the FQDN here or else you’ll run into problems in later steps.
-
 
 17. Now back at the main screen. You can press TAB until you highlighted  `<FINISH>` then press ENTER. You will be asked to reboot your raspberry pi. Select `<YES>` and press ENTER.
 
-
 18. Run the command: `sudo apt-get install screen` so that you can let the long running commands run in the background. You can use `nohup` or `disown`, but `screen` command might be easier to work with.
-
 
 19. Next, run the command: `screen -R` so you can reattach to the same screen using the aforementioned command and resume the work in an event you get disconnected. You can also do so much more with [screen](http://aperiodic.net/screen/quick_reference).
 
-
 20. Make sure your system’s up to date: `sudo apt-get update`
-
 
 ### **Installing and Configuring HTTP server:**
 
@@ -109,15 +90,11 @@ We’re going to configure the HTTP server to export the installation tree from 
 
 1. Edit the `/etc/hosts` file. Append the following line:
 
-
    `10.0.1.25   pxeboot.example.net pxeboot`
-
 
 2. Install the http server and text-based web browser (to test the http server):
 
-
    `sudo apt-get install apache2 elinks`
-
 
 3. By default, http server should be running immediately after the install. You can confirm by running the command:
 
