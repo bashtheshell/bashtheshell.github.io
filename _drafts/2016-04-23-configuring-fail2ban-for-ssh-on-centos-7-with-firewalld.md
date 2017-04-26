@@ -1,5 +1,5 @@
 ---
-title: "Configuring Fail2ban for SSH on CentOS 7 with firewalld"
+title: "Configuring fail2ban for SSH on CentOS 7 with firewalld"
 categories:
   - guide
 tags:
@@ -8,6 +8,7 @@ tags:
   - firewalld
   - ssh
 comments: true
+last_modified_at: 2017-04-26T00:00:01-04:00
 ---
 
 I’ve developed this tutorial based on the guides from the following locations:
