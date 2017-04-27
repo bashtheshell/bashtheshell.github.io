@@ -1,13 +1,21 @@
 ---
-layout:  
 title: "Setting up PXE Boot Server on Raspberry Pi"
-excerpt:
-categories: posts
-tags: [apache2, automated install, CentOS 7, Debian 8, Debian Jessie, isc-dhcp-server, Jessie Lite, PXE boot server, raspberry pi, syslinux, tftpd-hpa]
-share: true
-modified:
+categories:
+  - guide
+tags:
+  - apache2
+  - automated install
+  - CentOS 7
+  - Debian 8
+  - Debian Jessie
+  - isc-dhcp-server
+  - Jessie Lite
+  - PXE boot server
+  - raspberry pi
+  - syslinux
+  - tftpd-hpa
+last_modified_at: 2017-04-26T00:00:01-04:00       
 comments: true
-related: true
 ---
 
 I finally managed to find the time to implement a PXE boot server on my Raspberry Pi with CentOS 7 as my PXE boot image.
